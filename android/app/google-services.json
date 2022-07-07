@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "589201056291",
+    "project_id": "notetaking-mynotes-flutter",
+    "storage_bucket": "notetaking-mynotes-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589201056291:android:a7e7f9d0b3556b42374796",
+        "android_client_info": {
+          "package_name": "me.amartyaayushi.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589201056291-5kksj42f53rub42a4ev6lne24615pst6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3d-m3FKm0_V6pbWAg6hGFtQJH-r5QLnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589201056291-5kksj42f53rub42a4ev6lne24615pst6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
