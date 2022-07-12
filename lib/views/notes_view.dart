@@ -3,6 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as devtools show log;
 
+import '../firebase_options.dart';
+
 enum MenuAction { logout }
 
 Future<bool> showLogOutDialog(BuildContext context) {
@@ -47,7 +49,9 @@ class _NotesState extends State<Notes> {
         actions: [
           PopupMenuButton(
             onSelected: (value) async {
-              await Firebase.initializeApp();
+              await Firebase.initializeApp(
+                options: DefaultFirebaseOptions.currentPlatform,
+              );
               switch (value) {
                 case MenuAction.logout:
                   final shouldLogout = await showLogOutDialog(context);
