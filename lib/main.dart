@@ -19,7 +19,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Notes(),
+      home: const HomePage(),
     ),
   );
 }
