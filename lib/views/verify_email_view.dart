@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mynotes/constants/routes.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   const VerifyEmailPage({super.key});
@@ -24,6 +25,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               final user = FirebaseAuth.instance.currentUser;
               await user?.sendEmailVerification();
               await FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                loginRoute,
+                (route) => false,
+              );
             },
             child: const Text('Verify Email'),
           ),
