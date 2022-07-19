@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mynotes/constants/routes.dart';
 
@@ -31,6 +32,16 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               );
             },
             child: const Text('Verify Email'),
+          ),
+          TextButton(
+            onPressed: () async {
+              FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                loginRoute,
+                (route) => false,
+              );
+            },
+            child: const Text('Restart APP'),
           ),
         ],
       ),

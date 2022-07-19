@@ -16,6 +16,7 @@ void main() {
         loginRoute: (context) => const LoginView(),
         registerRoute: (context) => const RegisterView(),
         notesRoute: (context) => const Notes(),
+        verifyEmailRoute: (context) => const VerifyEmailPage(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
