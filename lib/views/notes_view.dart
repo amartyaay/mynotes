@@ -1,12 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mynotes/constants/routes.dart';
+import 'package:mynotes/services/auth/auth_service.dart';
 import 'dart:developer' as devtools show log;
 
-import '../firebase_options.dart';
-
-enum MenuAction { logout }
+import '../enums/menu_actions.dart';
 
 Future<bool> showLogOutDialog(BuildContext context) {
   return showDialog<bool>(
@@ -50,14 +47,11 @@ class _NotesState extends State<Notes> {
         actions: [
           PopupMenuButton(
             onSelected: (value) async {
-              await Firebase.initializeApp(
-                options: DefaultFirebaseOptions.currentPlatform,
-              );
               switch (value) {
                 case MenuAction.logout:
                   final shouldLogout = await showLogOutDialog(context);
                   if (shouldLogout) {
-                    await FirebaseAuth.instance.signOut();
+                    await AuthService.firbase().logOut();
                     Navigator.of(context)
                         .pushNamedAndRemoveUntil(loginRoute, (_) => false);
                   }

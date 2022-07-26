@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mynotes/firebase_options.dart';
 
 import 'auth_exceptions.dart';
 import 'auth_provider.dart';
@@ -102,5 +103,12 @@ class FirebaseAuthProvider implements AuthProvider {
     } else {
       throw UserNotFoundAuthException();
     }
+  }
+
+  @override
+  Future<void> intialize() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 }
